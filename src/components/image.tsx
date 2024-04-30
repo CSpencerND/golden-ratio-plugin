@@ -1,6 +1,31 @@
 import NextImage, { type ImageProps } from "next/image";
 import { tv, type VariantProps } from "tailwind-variants";
 
+type Variants = VariantProps<typeof styles>;
+type ClassNames = {
+    classNames?: Partial<{
+        wrapper: string;
+        image: string;
+    }>;
+};
+
+export function Image({
+    radius,
+    classNames,
+    ...props
+}: Variants & ClassNames & ImageProps) {
+    const { wrapper, image } = styles({ radius });
+
+    return (
+        <div className={wrapper({ class: [props.className, classNames?.wrapper] })}>
+            <NextImage
+                className={image({ class: [props.className, classNames?.image] })}
+                {...props}
+            />
+        </div>
+    );
+}
+
 const styles = tv({
     slots: {
         wrapper: "relative aspect-square ring-1 ring-border",
@@ -79,28 +104,3 @@ const styles = tv({
     //     },
     // ],
 });
-
-type Variants = VariantProps<typeof styles>;
-type ClassNames = {
-    classNames?: Partial<{
-        wrapper: string;
-        image: string;
-    }>;
-};
-
-export function Image({
-    radius,
-    classNames,
-    ...props
-}: Variants & ClassNames & ImageProps) {
-    const { wrapper, image } = styles({ radius });
-
-    return (
-        <div className={wrapper({ class: [props.className, classNames?.wrapper] })}>
-            <NextImage
-                className={image({ class: [props.className, classNames?.image] })}
-                {...props}
-            />
-        </div>
-    );
-}
