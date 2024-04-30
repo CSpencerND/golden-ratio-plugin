@@ -1,4 +1,17 @@
+// @ts-check
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+
+const nextConfig = {
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "nextuipro.nyc3.cdn.digitaloceanspaces.com",
+                pathname: "/components-images/places/**",
+            },
+        ],
+    },
+};
 
 export default nextConfig;

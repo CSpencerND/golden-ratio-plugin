@@ -2,15 +2,15 @@ import plugin from "tailwindcss/plugin";
 
 const phi = 1.61803398875;
 
-const m = 1;
-const s = m / phi;
-const xs = s / phi;
+const md = 1;
+const sm = md / phi;
+const xs = sm / phi;
 const xxs = xs / phi;
-const l = m * phi;
-const xl = l * phi;
+const lg = md * phi;
+const xl = lg * phi;
 const xxl = xl * phi;
 
-const sizes = { xxs, xs, s, m, l, xl, xxl };
+const sizes = { xxs, xs, sm, md, lg, xl, xxl };
 
 type Props = {
     css: Record<string, string>;
@@ -23,7 +23,7 @@ const props = Object.entries(sizes).reduce(
         props.tw[`gr-${k}`] = `var(--gr-${k})`;
         return props;
     },
-    { css: {}, tw: {} }
+    { css: {}, tw: {} },
 );
 
 /**
@@ -63,7 +63,8 @@ export const goldenRatio = plugin(
             extend: {
                 spacing: props.tw,
                 borderRadius: props.tw,
+                fontSize: props.tw,
             },
         },
-    }
+    },
 );
