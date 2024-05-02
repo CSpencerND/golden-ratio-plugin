@@ -1,3 +1,4 @@
+import { getImagePlaceholder } from "@/lib/plaiceholder";
 import NextImage, { type ImageProps } from "next/image";
 import { tv, type VariantProps } from "tailwind-variants";
 
@@ -9,17 +10,33 @@ type ClassNames = {
     }>;
 };
 
-export function Image({
+export async function Image({
     radius,
+    className,
     classNames,
     ...props
 }: Variants & ClassNames & ImageProps) {
     const { wrapper, image } = styles({ radius });
+    const base64 = await getImagePlaceholder(props.src as string);
+    console.log(base64);
+
+    if (base64) {
+        return (
+            <div className={wrapper({ class: [className, classNames?.wrapper] })}>
+                <NextImage
+                    className={image({ class: [className, classNames?.image] })}
+                    placeholder="blur"
+                    blurDataURL={base64}
+                    {...props}
+                />
+            </div>
+        );
+    }
 
     return (
-        <div className={wrapper({ class: [props.className, classNames?.wrapper] })}>
+        <div className={wrapper({ class: [className, classNames?.wrapper] })}>
             <NextImage
-                className={image({ class: [props.className, classNames?.image] })}
+                className={image({ class: [className, classNames?.image] })}
                 {...props}
             />
         </div>

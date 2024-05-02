@@ -1,11 +1,7 @@
-import "@/styles/globals.css";
-import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
-
-const fontSans = FontSans({
-    subsets: ["latin"],
-    variable: "--font-sans",
-});
+import "@/styles/globals.css";
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 
 export default function RootLayout({
     children,
@@ -20,7 +16,8 @@ export default function RootLayout({
         >
             <body
                 className={cn(
-                    fontSans.variable,
+                    GeistSans.variable,
+                    GeistMono.variable,
                     "min-h-screen bg-background font-sans antialiased",
                 )}
             >

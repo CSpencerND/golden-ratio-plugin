@@ -1,16 +1,11 @@
-/**
- * NOTE:
- * If an element is a square, we can determine border radius
- * by dividing it's height by the golden angle squared ( 2.399^2 = 5.755 )
- */
-
 import { Image } from "@/components/image";
+import { cn } from "@/lib/utils";
 
 /**
  * @return sqrt(radius = area / 9)
  */
-function getBorderRadius(width: number, height: number, factor: number = 13) {
-    return Math.sqrt((width * height) / factor) / 2;
+function getBorderRadius(width: number, height: number, padding = 0, factor = 13) {
+    return padding + Math.sqrt((width * height) / factor) / 2;
 }
 
 const urls = [
@@ -19,14 +14,19 @@ const urls = [
     "https://nextuipro.nyc3.cdn.digitaloceanspaces.com/components-images/places/14.jpeg",
 ];
 
+// TODO: Make the max-w of main such that it fits 3 grid columns with the appropriate border radius for their size;
+//       Prolly gotta use getBorderRadius and figure the math from their;
 export default async function Home() {
     return (
         <main className="container min-h-screen max-w-6xl space-y-24 border py-24">
+            <div className="grid place-items-center">
+                <h1 className="text-gr-xl border">Hello, World!</h1>
+            </div>
             <div
                 className="grid place-items-center gap-gr-xl"
-                // style={{
-                //     gridTemplateColumns: `repeat(auto-fit, minmax(192px, auto))`,
-                // }}
+                style={{
+                    gridTemplateColumns: `repeat(auto-fit, minmax(144px, auto))`,
+                }}
             >
                 {urls.map((url, i) => (
                     <Image
@@ -34,17 +34,18 @@ export default async function Home() {
                         src={url}
                         alt=""
                         fill
+                        // width={144}
+                        // height={144}
                         sizes="100vw"
-                        // className="aspect-square"
                         // radius="xl"
-                        className="aspect-square size-36 rounded-none"
+                        className={cn("h-auto w-full rounded-gr-xl")}
                     />
                 ))}
             </div>
 
             <div className="grid place-items-center gap-6">
                 <div
-                    className="text-gr-sm relative grid place-items-center bg-secondary"
+                    className="relative bg-secondary"
                     style={{
                         width: "144px",
                         height: "29px",
@@ -75,13 +76,15 @@ export default async function Home() {
                 </div>
 
                 <div
-                    className="relative grid place-items-center bg-secondary"
+                    className="relative bg-secondary p-[16px] pt-[12px] text-[16px]"
                     style={{
                         width: "114px",
                         height: "114px",
                         borderRadius: getBorderRadius(114, 114),
                     }}
-                ></div>
+                >
+                    Hello, 114
+                </div>
 
                 <div
                     className="relative grid place-items-center bg-secondary"
