@@ -52,7 +52,7 @@ const props = Object.entries(sizes).reduce(
  * `    "gr-xxl": "var(--gr-xxl)",`
  * `}`
  */
-export const goldenRatio = plugin(
+export default plugin(
     ({ addBase }) => {
         addBase({
             ":root": props.css,

@@ -13,14 +13,14 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +41 ~/Code/Projects/next-golden-ratio/src/app/page.tsx
-badd +20 src/components/image.tsx
-badd +13 ~/Code/Projects/next-golden-ratio/src/lib/plaiceholder.ts
-badd +42 golden-ratio/index.ts
+badd +25 ~/Code/Projects/next-golden-ratio/src/app/page.tsx
+badd +5 tailwind.config.ts
+badd +1 src/styles/globals.css
+badd +1 src/app/layout.tsx
 argglobal
 %argdel
 $argadd ./
-edit src/components/image.tsx
+edit ~/Code/Projects/next-golden-ratio/src/app/page.tsx
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -29,7 +29,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/Code/Projects/next-golden-ratio/src/lib/plaiceholder.ts
+balt tailwind.config.ts
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -40,12 +40,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 20 - ((16 * winheight(0) + 27) / 55)
+let s:l = 25 - ((21 * winheight(0) + 27) / 55)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 20
-normal! 022|
+keepjumps 25
+normal! 037|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

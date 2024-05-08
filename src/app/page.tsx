@@ -2,9 +2,9 @@ import { Image } from "@/components/image";
 import { cn } from "@/lib/utils";
 
 /**
- * @return sqrt(radius = area / 9)
+ * @return sqrt(radius = area / 8)
  */
-function getBorderRadius(width: number, height: number, padding = 0, factor = 13) {
+function getBorderRadius(width: number, height: number, padding = 0, factor = 8) {
     return padding + Math.sqrt((width * height) / factor) / 2;
 }
 
@@ -18,34 +18,35 @@ const urls = [
 //       Prolly gotta use getBorderRadius and figure the math from their;
 export default async function Home() {
     return (
-        <main className="container min-h-screen max-w-6xl space-y-24 border py-24">
-            <div className="grid place-items-center">
-                <h1 className="text-gr-xl border">Hello, World!</h1>
-            </div>
-            <div
-                className="grid place-items-center gap-gr-xl"
-                style={{
-                    gridTemplateColumns: `repeat(auto-fit, minmax(144px, auto))`,
-                }}
-            >
-                {urls.map((url, i) => (
-                    <Image
-                        key={i}
-                        src={url}
-                        alt=""
-                        fill
-                        // width={144}
-                        // height={144}
-                        sizes="100vw"
-                        // radius="xl"
-                        className={cn("h-auto w-full rounded-gr-xl")}
-                    />
-                ))}
+        <main className="container min-h-screen max-w-6xl space-y-24 py-24">
+            <div className="flex justify-center">
+                <div className="bg-gunmetal-800 ring-gunmetal-700 rounded-[27px] px-[36px] py-[27px] ring-1">
+                    <h1 className="text-gunmetal-100 text-3xl font-medium">
+                        Hello, World!
+                    </h1>
+                    <h1 className="text-gunmetal-200 text-3xl font-medium">
+                        Hello, World!
+                    </h1>
+                    <h1 className="text-gunmetal-300 text-3xl font-medium">
+                        Hello, World!
+                    </h1>
+                </div>
             </div>
 
-            <div className="grid place-items-center gap-6">
+            <div className="grid h-48 grid-cols-4 place-items-center gap-6 *:aspect-square *:h-auto *:w-full *:rounded-lg">
+                <div className="bg-gunmetal-100 "></div>
+                <div className="bg-gunmetal-200 "></div>
+                <div className="bg-gunmetal-300 "></div>
+                <div className="bg-gunmetal-400 "></div>
+                <div className="bg-gunmetal-500 "></div>
+                <div className="bg-gunmetal-600 "></div>
+                <div className="bg-gunmetal-700 "></div>
+                <div className="bg-gunmetal-800 "></div>
+            </div>
+
+            <div className="grid hidden place-items-center gap-6">
                 <div
-                    className="relative bg-secondary"
+                    className="relative bg-card"
                     style={{
                         width: "144px",
                         height: "29px",
@@ -64,7 +65,7 @@ export default async function Home() {
                     {/* </div> */}
 
                     <div
-                        className="relative grid place-items-center bg-secondary"
+                        className="relative grid place-items-center bg-card"
                         // className="relative grid place-items-center border border-background bg-transparent"
                         style={{
                             width: "144px",
@@ -76,7 +77,7 @@ export default async function Home() {
                 </div>
 
                 <div
-                    className="relative bg-secondary p-[16px] pt-[12px] text-[16px]"
+                    className="relative bg-card p-[16px] pt-[12px] text-[16px]"
                     style={{
                         width: "114px",
                         height: "114px",
@@ -87,7 +88,7 @@ export default async function Home() {
                 </div>
 
                 <div
-                    className="relative grid place-items-center bg-secondary"
+                    className="relative grid place-items-center bg-card"
                     style={{
                         width: "72px",
                         height: "72px",
@@ -96,7 +97,7 @@ export default async function Home() {
                 ></div>
 
                 <div
-                    className="relative grid place-items-center bg-secondary"
+                    className="relative grid place-items-center bg-card"
                     style={{
                         width: "57px",
                         height: "57px",
@@ -105,7 +106,7 @@ export default async function Home() {
                 ></div>
 
                 <div
-                    className="relative grid place-items-center bg-secondary"
+                    className="relative grid place-items-center bg-card"
                     style={{
                         width: "29px",
                         height: "29px",
@@ -116,3 +117,24 @@ export default async function Home() {
         </main>
     );
 }
+
+/**
+ * grid lines
+ * <div
+ *     className="grid place-items-center gap-gr-xl"
+ *     style={{
+ *         gridTemplateColumns: `repeat(auto-fit, minmax(144px, auto))`,
+ *     }}
+ * >
+ *     {urls.map((url, i) => (
+ *         <Image
+ *             key={i}
+ *             src={url}
+ *             alt=""
+ *             fill
+ *             sizes="100vw"
+ *             className={cn("h-auto w-full rounded-gr-xl")}
+ *         />
+ *     ))}
+ * </div>
+ */

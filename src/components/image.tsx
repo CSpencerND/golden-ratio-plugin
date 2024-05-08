@@ -17,7 +17,7 @@ export async function Image({
     ...props
 }: Variants & ClassNames & ImageProps) {
     const { wrapper, image } = styles({ radius });
-    const base64 = await getImagePlaceholder(props.src as string);
+    const base64 = await getImagePlaceholder(props.src.toString());
     console.log(base64);
 
     if (base64) {
@@ -26,7 +26,7 @@ export async function Image({
                 <NextImage
                     className={image({ class: [className, classNames?.image] })}
                     placeholder="blur"
-                    blurDataURL={base64}
+                    blurDataURL={base64.toString()}
                     {...props}
                 />
             </div>

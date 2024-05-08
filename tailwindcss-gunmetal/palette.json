@@ -1,0 +1,43 @@
+[
+    {
+        "paletteName": "gunmetal",
+        "swatches": [
+            {
+                "name": "gunmetal 900",
+                "color": "0f111a"
+            },
+            {
+                "name": "gunmetal 800",
+                "color": "202533"
+            },
+            {
+                "name": "gunmetal 700",
+                "color": "343b4c"
+            },
+            {
+                "name": "gunmetal 600",
+                "color": "495365"
+            },
+            {
+                "name": "gunmetal 500",
+                "color": "616c7e"
+            },
+            {
+                "name": "gunmetal 400",
+                "color": "7b8797"
+            },
+            {
+                "name": "gunmetal 300",
+                "color": "97a3b1"
+            },
+            {
+                "name": "gunmetal 200",
+                "color": "b6c0ca"
+            },
+            {
+                "name": "gunmetal 100",
+                "color": "d6dde3"
+            }
+        ]
+    }
+]

@@ -18,7 +18,8 @@ export default function RootLayout({
                 className={cn(
                     GeistSans.variable,
                     GeistMono.variable,
-                    "min-h-screen bg-background font-sans antialiased",
+                    "min-h-screen font-sans text-foreground antialiased",
+                    "bg-gunmetal-900",
                 )}
             >
                 {children}
@@ -28,7 +29,7 @@ export default function RootLayout({
     );
 }
 
-export function TailwindIndicator() {
+function TailwindIndicator() {
     if (process.env.NODE_ENV === "production") return null;
 
     return (

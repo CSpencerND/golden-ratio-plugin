@@ -1,0 +1,29 @@
+[
+    {
+        "properties": {
+            "steps": 9,
+            "hue": {
+                "start": 207,
+                "end": 227,
+                "curve": "linear"
+            },
+            "saturation": {
+                "start": 0.05,
+                "end": 0.37,
+                "rate": 1.1,
+                "curve": "linear"
+            },
+            "brightness": {
+                "start": 0.89,
+                "end": 0.1,
+                "curve": "linear"
+            }
+        },
+        "options": {
+            "minorSteps": [],
+            "name": "gunmetal",
+            "provideInverted": true,
+            "rotation": "clockwise"
+        }
+    }
+]
