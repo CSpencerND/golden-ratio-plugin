@@ -25,7 +25,7 @@ export default async function Home() {
     return (
         <main className="container min-h-screen max-w-6xl space-y-24 py-24">
             <div className="flex justify-center">
-                <div className="rounded-[27px] bg-gunmetal-900 px-[36px] py-[27px] ring-1 ring-gunmetal-800">
+                <div className="dark:shadow-dark rounded-[23px] bg-gunmetal-900 px-[30px] py-[23px] shadow-medium">
                     <h1 className="text-3xl font-medium text-gunmetal-100">
                         Hello, World!
                     </h1>
@@ -39,7 +39,6 @@ export default async function Home() {
             </div>
 
             <div className="grid h-48 grid-cols-4 place-items-center gap-6 *:aspect-square *:h-auto *:w-full *:rounded-lg">
-                <div className="bg-gunmetal-100"></div>
                 <div className="bg-gunmetal-200"></div>
                 <div className="bg-gunmetal-300"></div>
                 <div className="bg-gunmetal-400"></div>
