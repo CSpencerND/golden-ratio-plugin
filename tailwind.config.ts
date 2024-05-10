@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 import { fontFamily } from "tailwindcss/defaultTheme";
-import { gunmetal } from "./tailwindcss-gunmetal";
+import { output2alt as gunmetal } from "./tailwindcss-gunmetal";
 
 const config = {
     darkMode: ["class"],
@@ -69,10 +69,14 @@ const config = {
             keyframes: {
                 "accordion-down": {
                     from: { height: "0" },
-                    to: { height: "var(--radix-accordion-content-height)" },
+                    to: {
+                        height: "var(--radix-accordion-content-height)",
+                    },
                 },
                 "accordion-up": {
-                    from: { height: "var(--radix-accordion-content-height)" },
+                    from: {
+                        height: "var(--radix-accordion-content-height)",
+                    },
                     to: { height: "0" },
                 },
             },

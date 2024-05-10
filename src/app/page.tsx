@@ -4,7 +4,12 @@ import { cn } from "@/lib/utils";
 /**
  * @return sqrt(radius = area / 8)
  */
-function getBorderRadius(width: number, height: number, padding = 0, factor = 8) {
+function getBorderRadius(
+    width: number,
+    height: number,
+    padding = 0,
+    factor = 8,
+) {
     return padding + Math.sqrt((width * height) / factor) / 2;
 }
 
@@ -20,28 +25,29 @@ export default async function Home() {
     return (
         <main className="container min-h-screen max-w-6xl space-y-24 py-24">
             <div className="flex justify-center">
-                <div className="bg-gunmetal-800 ring-gunmetal-700 rounded-[27px] px-[36px] py-[27px] ring-1">
-                    <h1 className="text-gunmetal-100 text-3xl font-medium">
+                <div className="rounded-[27px] bg-gunmetal-900 px-[36px] py-[27px] ring-1 ring-gunmetal-800">
+                    <h1 className="text-3xl font-medium text-gunmetal-100">
                         Hello, World!
                     </h1>
-                    <h1 className="text-gunmetal-200 text-3xl font-medium">
+                    <h1 className="text-3xl font-medium text-gunmetal-200">
                         Hello, World!
                     </h1>
-                    <h1 className="text-gunmetal-300 text-3xl font-medium">
+                    <h1 className="text-3xl font-medium text-gunmetal-300">
                         Hello, World!
                     </h1>
                 </div>
             </div>
 
             <div className="grid h-48 grid-cols-4 place-items-center gap-6 *:aspect-square *:h-auto *:w-full *:rounded-lg">
-                <div className="bg-gunmetal-100 "></div>
-                <div className="bg-gunmetal-200 "></div>
-                <div className="bg-gunmetal-300 "></div>
-                <div className="bg-gunmetal-400 "></div>
-                <div className="bg-gunmetal-500 "></div>
-                <div className="bg-gunmetal-600 "></div>
-                <div className="bg-gunmetal-700 "></div>
-                <div className="bg-gunmetal-800 "></div>
+                <div className="bg-gunmetal-100"></div>
+                <div className="bg-gunmetal-200"></div>
+                <div className="bg-gunmetal-300"></div>
+                <div className="bg-gunmetal-400"></div>
+                <div className="bg-gunmetal-500"></div>
+                <div className="bg-gunmetal-600"></div>
+                <div className="bg-gunmetal-700"></div>
+                <div className="bg-gunmetal-800"></div>
+                <div className="bg-gunmetal-900"></div>
             </div>
 
             <div className="grid hidden place-items-center gap-6">
