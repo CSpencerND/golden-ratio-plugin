@@ -9,8 +9,9 @@ const xxs = xs / phi;
 const lg = md * phi;
 const xl = lg * phi;
 const xxl = xl * phi;
+const xxxl = xxl * phi;
 
-const sizes = { xxs, xs, sm, md, lg, xl, xxl };
+const sizes = { xxs, xs, sm, md, lg, xl, xxl, xxxl };
 
 type Props = {
     css: Record<string, string>;
@@ -63,7 +64,7 @@ export default plugin(
             extend: {
                 spacing: props.tw,
                 borderRadius: props.tw,
-                fontSize: props.tw,
+                // fontSize: props.tw,
             },
         },
     },

@@ -99,8 +99,9 @@ const config = {
     },
     plugins: [
         require("tailwindcss-animate"),
-        // require("tailwindcss-golden-ratio"),
-        // require("./golden-ratio"),
+        require("@tailwindcss/typography"),
+        require("@tailwindcss/container-queries"),
+        require("./golden-ratio"),
     ],
 } satisfies Config;
 

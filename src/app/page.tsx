@@ -26,16 +26,53 @@ export default async function Home() {
         <main className="container min-h-screen max-w-6xl space-y-24 py-24">
             <div className="flex justify-center">
                 <div className="dark:shadow-dark rounded-[23px] bg-gunmetal-900 px-[30px] py-[23px] shadow-medium">
+                    <h1 className="text-gunmetal-50 text-3xl font-medium">
+                        Hello, World!
+                    </h1>
                     <h1 className="text-3xl font-medium text-gunmetal-100">
                         Hello, World!
                     </h1>
                     <h1 className="text-3xl font-medium text-gunmetal-200">
                         Hello, World!
                     </h1>
-                    <h1 className="text-3xl font-medium text-gunmetal-300">
-                        Hello, World!
-                    </h1>
                 </div>
+            </div>
+
+            <div className="grid">
+                <p className="text-gunmetal-100">Base font size</p>
+                <p className="text-gunmetal-100">Hello, World!</p>
+            </div>
+
+            {/* compare this against shadcn and prose equivalents */}
+            <div className="grid text-[1.618em]">
+                <p className="max-w-prose text-[0.618em] leading-[1.826em] text-gunmetal-100">
+                    Hello, World!
+                </p>
+                <p className="text-[0.7862em] leading-[1.618em] text-gunmetal-100">
+                    Hello, World!
+                </p>
+                <p className="text-[1em] leading-[1.435em] text-gunmetal-100">
+                    Hello, World!
+                </p>
+                <p className="text-[1.272em] leading-[1.272em] text-gunmetal-100">
+                    Hello, World!
+                </p>
+                <p className="text-[1.618em] leading-[1.198em] text-gunmetal-100">
+                    Hello, World!
+                </p>
+                <p className="text-[2.058em] leading-[1.128em] text-gunmetal-100">
+                    Hello, World!
+                </p>
+                <p className="text-[2.618em] leading-[1.062em] text-gunmetal-100">
+                    Hello, World!
+                </p>
+            </div>
+
+            <div className="prose grid">
+                <h4 className="text-gunmetal-100">Hello, World!</h4>
+                <h3 className="text-gunmetal-100">Hello, World!</h3>
+                <h2 className="text-gunmetal-100">Hello, World!</h2>
+                <h1 className="text-gunmetal-100">Hello, World!</h1>
             </div>
 
             <div className="grid h-48 grid-cols-4 place-items-center gap-6 *:aspect-square *:h-auto *:w-full *:rounded-lg">
