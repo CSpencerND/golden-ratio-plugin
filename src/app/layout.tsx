@@ -19,6 +19,7 @@ export default function RootLayout({
                     GeistSans.variable,
                     GeistMono.variable,
                     "min-h-screen font-sans text-foreground antialiased",
+                    "text-gr-base font-medium",
                     "bg-gunmetal-950",
                 )}
             >

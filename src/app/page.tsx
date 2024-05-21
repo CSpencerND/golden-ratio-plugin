@@ -28,7 +28,7 @@ const urls = [
 //       Prolly gotta use getBorderRadius and figure the math from their;
 export default async function Home() {
     return (
-        <main className="container min-h-screen max-w-6xl space-y-24 py-24">
+        <main className="main-grid">
             <div className="flex justify-center">
                 <div className="rounded-[23px] bg-gunmetal-900 px-[30px] py-[23px] shadow-medium dark:shadow-dark">
                     <h1 className="text-3xl font-medium text-gunmetal-50">
@@ -43,51 +43,21 @@ export default async function Home() {
                 </div>
             </div>
 
-            {/************************ New Shit Test **********************/}
-            {/** PERF: or just fuck all this and use shadcn's typography */}
-            {/** PERF: other option is copy paste css from liftkit */}
-
-            <div className="text-gr-base grid leading-none text-gunmetal-100 *:font-medium">
-                <p className="text-gr-xxs">The quick brown fox...</p>
-                <p className="text-gr-xs">The quick brown fox...</p>
-                <p className="text-gr-sm">The quick brown fox...</p>
-                <p className="text-gr-md">The quick brown fox...</p>
-                <p className="text-gr-lg">The quick brown fox...</p>
-                <p className="text-gr-xl">The quick brown fox...</p>
-                <p className="text-gr-2xl">The quick brown fox...</p>
-                <p className="text-gr-3xl truncate">
-                    The quick brown fox ...
-                </p>
-                <p className="text-gr-4xl truncate">
-                    The quick brown fox ...
-                </p>
-                <p className="text-gr-5xl truncate">
-                    The quick brown fox ...
-                </p>
+            <div className="grid text-gunmetal-100 *:truncate">
+                <p className="text-gr-xxs">The quick brown fox</p>
+                <p className="text-gr-xs">The quick brown fox</p>
+                <p className="text-gr-sm">The quick brown fox</p>
+                <p>The quick brown fox</p>
+                <p className="text-gr-lg">The quick brown fox</p>
+                <p className="text-gr-xl">The quick brown fox</p>
+                <p className="text-gr-2xl">The quick brown fox</p>
+                <p className="text-gr-3xl">The quick brown fox</p>
+                <p className="text-gr-4xl">The quick brown fox</p>
+                <p className="text-gr-5xl">The quick brown fox</p>
             </div>
 
-            <div className="text-gr-base grid text-gunmetal-100 ">
-                <p className="leading-[1.618]">
-                    Lorem ipsum dolor sit amet, officia excepteur ex
-                    fugiat reprehenderit enim labore culpa sint ad nisi
-                    Lorem pariatur mollit ex esse exercitation amet.
-                    Nisi anim cupidatat excepteur officia. Reprehenderit
-                    nostrud nostrud ipsum Lorem est aliquip amet
-                    voluptate voluptate dolor minim nulla est proident.
-                    Nostrud officia pariatur ut officia. Sit irure elit
-                    esse ea nulla sunt ex occaecat reprehenderit commodo
-                    officia dolor Lorem duis laboris cupidatat officia
-                    voluptate. Culpa proident adipisicing id nulla nisi
-                    laboris ex in Lorem sunt duis officia eiusmod.
-                    Aliqua reprehenderit commodo ex non excepteur duis
-                    sunt velit enim. Voluptate laboris sint cupidatat
-                    ullamco ut ea consectetur et est culpa et culpa
-                    duis.
-                </p>
-            </div>
-
-            <div className="grid text-gunmetal-100 ">
-                <p className="">
+            <div className="grid text-gunmetal-100">
+                <p>
                     Lorem ipsum dolor sit amet, officia excepteur ex
                     fugiat reprehenderit enim labore culpa sint ad nisi
                     Lorem pariatur mollit ex esse exercitation amet.
