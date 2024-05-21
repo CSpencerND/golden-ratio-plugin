@@ -13,6 +13,11 @@ function getBorderRadius(
     return padding + Math.sqrt((width * height) / factor) / 2;
 }
 
+const PHI = 1.61803398875;
+const HALF = Math.sqrt(PHI);
+const QTR = Math.sqrt(HALF);
+const EIGHTH = Math.sqrt(QTR);
+
 const urls = [
     "https://nextuipro.nyc3.cdn.digitaloceanspaces.com/components-images/places/4.jpeg",
     "https://nextuipro.nyc3.cdn.digitaloceanspaces.com/components-images/places/1.jpeg",
@@ -25,8 +30,8 @@ export default async function Home() {
     return (
         <main className="container min-h-screen max-w-6xl space-y-24 py-24">
             <div className="flex justify-center">
-                <div className="dark:shadow-dark rounded-[23px] bg-gunmetal-900 px-[30px] py-[23px] shadow-medium">
-                    <h1 className="text-gunmetal-50 text-3xl font-medium">
+                <div className="rounded-[23px] bg-gunmetal-900 px-[30px] py-[23px] shadow-medium dark:shadow-dark">
+                    <h1 className="text-3xl font-medium text-gunmetal-50">
                         Hello, World!
                     </h1>
                     <h1 className="text-3xl font-medium text-gunmetal-100">
@@ -38,124 +43,79 @@ export default async function Home() {
                 </div>
             </div>
 
-            <div className="grid">
-                <p className="text-gunmetal-100">Base font size</p>
-                <p className="text-gunmetal-100">Hello, World!</p>
-            </div>
+            {/************************ New Shit Test **********************/}
+            {/** PERF: or just fuck all this and use shadcn's typography */}
+            {/** PERF: other option is copy paste css from liftkit */}
 
-            {/* compare this against shadcn and prose equivalents */}
-            <div className="grid text-[1.618em]">
-                <p className="max-w-prose text-[0.618em] leading-[1.826em] text-gunmetal-100">
-                    Hello, World!
+            <div className="text-gr-base grid leading-none text-gunmetal-100 *:font-medium">
+                <p className="text-gr-xxs">The quick brown fox...</p>
+                <p className="text-gr-xs">The quick brown fox...</p>
+                <p className="text-gr-sm">The quick brown fox...</p>
+                <p className="text-gr-md">The quick brown fox...</p>
+                <p className="text-gr-lg">The quick brown fox...</p>
+                <p className="text-gr-xl">The quick brown fox...</p>
+                <p className="text-gr-2xl">The quick brown fox...</p>
+                <p className="text-gr-3xl truncate">
+                    The quick brown fox ...
                 </p>
-                <p className="text-[0.7862em] leading-[1.618em] text-gunmetal-100">
-                    Hello, World!
+                <p className="text-gr-4xl truncate">
+                    The quick brown fox ...
                 </p>
-                <p className="text-[1em] leading-[1.435em] text-gunmetal-100">
-                    Hello, World!
-                </p>
-                <p className="text-[1.272em] leading-[1.272em] text-gunmetal-100">
-                    Hello, World!
-                </p>
-                <p className="text-[1.618em] leading-[1.198em] text-gunmetal-100">
-                    Hello, World!
-                </p>
-                <p className="text-[2.058em] leading-[1.128em] text-gunmetal-100">
-                    Hello, World!
-                </p>
-                <p className="text-[2.618em] leading-[1.062em] text-gunmetal-100">
-                    Hello, World!
+                <p className="text-gr-5xl truncate">
+                    The quick brown fox ...
                 </p>
             </div>
 
-            <div className="prose grid">
-                <h4 className="text-gunmetal-100">Hello, World!</h4>
-                <h3 className="text-gunmetal-100">Hello, World!</h3>
-                <h2 className="text-gunmetal-100">Hello, World!</h2>
-                <h1 className="text-gunmetal-100">Hello, World!</h1>
+            <div className="text-gr-base grid text-gunmetal-100 ">
+                <p className="leading-[1.618]">
+                    Lorem ipsum dolor sit amet, officia excepteur ex
+                    fugiat reprehenderit enim labore culpa sint ad nisi
+                    Lorem pariatur mollit ex esse exercitation amet.
+                    Nisi anim cupidatat excepteur officia. Reprehenderit
+                    nostrud nostrud ipsum Lorem est aliquip amet
+                    voluptate voluptate dolor minim nulla est proident.
+                    Nostrud officia pariatur ut officia. Sit irure elit
+                    esse ea nulla sunt ex occaecat reprehenderit commodo
+                    officia dolor Lorem duis laboris cupidatat officia
+                    voluptate. Culpa proident adipisicing id nulla nisi
+                    laboris ex in Lorem sunt duis officia eiusmod.
+                    Aliqua reprehenderit commodo ex non excepteur duis
+                    sunt velit enim. Voluptate laboris sint cupidatat
+                    ullamco ut ea consectetur et est culpa et culpa
+                    duis.
+                </p>
             </div>
 
-            <div className="grid h-48 grid-cols-4 place-items-center gap-6 *:aspect-square *:h-auto *:w-full *:rounded-lg">
-                <div className="bg-gunmetal-200"></div>
-                <div className="bg-gunmetal-300"></div>
-                <div className="bg-gunmetal-400"></div>
-                <div className="bg-gunmetal-500"></div>
-                <div className="bg-gunmetal-600"></div>
-                <div className="bg-gunmetal-700"></div>
-                <div className="bg-gunmetal-800"></div>
-                <div className="bg-gunmetal-900"></div>
+            <div className="grid text-gunmetal-100 ">
+                <p className="">
+                    Lorem ipsum dolor sit amet, officia excepteur ex
+                    fugiat reprehenderit enim labore culpa sint ad nisi
+                    Lorem pariatur mollit ex esse exercitation amet.
+                    Nisi anim cupidatat excepteur officia. Reprehenderit
+                    nostrud nostrud ipsum Lorem est aliquip amet
+                    voluptate voluptate dolor minim nulla est proident.
+                    Nostrud officia pariatur ut officia. Sit irure elit
+                    esse ea nulla sunt ex occaecat reprehenderit commodo
+                    officia dolor Lorem duis laboris cupidatat officia
+                    voluptate. Culpa proident adipisicing id nulla nisi
+                    laboris ex in Lorem sunt duis officia eiusmod.
+                    Aliqua reprehenderit commodo ex non excepteur duis
+                    sunt velit enim. Voluptate laboris sint cupidatat
+                    ullamco ut ea consectetur et est culpa et culpa
+                    duis.
+                </p>
             </div>
 
-            <div className="grid hidden place-items-center gap-6">
-                <div
-                    className="relative bg-card"
-                    style={{
-                        width: "144px",
-                        height: "29px",
-                        borderRadius: getBorderRadius(144, 29),
-                    }}
-                ></div>
-
-                <div className="relative size-[144px]">
-                    {/* <div className="absolute inset-0 grid size-full grid-cols-4 grid-rows-4 gap-[1px] bg-background"> */}
-                    {/*     {Array.from({ length: 16 }).map((_, i) => ( */}
-                    {/*         <div */}
-                    {/*             key={i} */}
-                    {/*             className="grid place-items-center bg-zinc-700" */}
-                    {/*         /> */}
-                    {/*     ))} */}
-                    {/* </div> */}
-
-                    <div
-                        className="relative grid place-items-center bg-card"
-                        // className="relative grid place-items-center border border-background bg-transparent"
-                        style={{
-                            width: "144px",
-                            height: "144px",
-                            borderRadius: getBorderRadius(144, 144),
-                            // borderRadius: "26px",
-                        }}
-                    ></div>
-                </div>
-
-                <div
-                    className="relative bg-card p-[16px] pt-[12px] text-[16px]"
-                    style={{
-                        width: "114px",
-                        height: "114px",
-                        borderRadius: getBorderRadius(114, 114),
-                    }}
-                >
-                    Hello, 114
-                </div>
-
-                <div
-                    className="relative grid place-items-center bg-card"
-                    style={{
-                        width: "72px",
-                        height: "72px",
-                        borderRadius: getBorderRadius(72, 72),
-                    }}
-                ></div>
-
-                <div
-                    className="relative grid place-items-center bg-card"
-                    style={{
-                        width: "57px",
-                        height: "57px",
-                        borderRadius: getBorderRadius(57, 57),
-                    }}
-                ></div>
-
-                <div
-                    className="relative grid place-items-center bg-card"
-                    style={{
-                        width: "29px",
-                        height: "29px",
-                        borderRadius: getBorderRadius(29, 29),
-                    }}
-                ></div>
-            </div>
+            {/* <div className="grid h-48 grid-cols-4 place-items-center gap-6 *:aspect-square *:h-auto *:w-full *:rounded-lg"> */}
+            {/*     <div className="bg-gunmetal-200"></div> */}
+            {/*     <div className="bg-gunmetal-300"></div> */}
+            {/*     <div className="bg-gunmetal-400"></div> */}
+            {/*     <div className="bg-gunmetal-500"></div> */}
+            {/*     <div className="bg-gunmetal-600"></div> */}
+            {/*     <div className="bg-gunmetal-700"></div> */}
+            {/*     <div className="bg-gunmetal-800"></div> */}
+            {/*     <div className="bg-gunmetal-900"></div> */}
+            {/* </div> */}
         </main>
     );
 }
@@ -180,3 +140,75 @@ export default async function Home() {
  *     ))}
  * </div>
  */
+
+// Some bs
+//            <div className="grid hidden place-items-center gap-6">
+//                <div
+//                    className="relative bg-card"
+//                    style={{
+//                        width: "144px",
+//                        height: "29px",
+//                        borderRadius: getBorderRadius(144, 29),
+//                    }}
+//                ></div>
+//
+//                <div className="relative size-[144px]">
+//                    {/* <div className="absolute inset-0 grid size-full grid-cols-4 grid-rows-4 gap-[1px] bg-background"> */}
+//                    {/*     {Array.from({ length: 16 }).map((_, i) => ( */}
+//                    {/*         <div */}
+//                    {/*             key={i} */}
+//                    {/*             className="grid place-items-center bg-zinc-700" */}
+//                    {/*         /> */}
+//                    {/*     ))} */}
+//                    {/* </div> */}
+//
+//                    <div
+//                        className="relative grid place-items-center bg-card"
+//                        // className="relative grid place-items-center border border-background bg-transparent"
+//                        style={{
+//                            width: "144px",
+//                            height: "144px",
+//                            borderRadius: getBorderRadius(144, 144),
+//                            // borderRadius: "26px",
+//                        }}
+//                    ></div>
+//                </div>
+//
+//                <div
+//                    className="relative bg-card p-[16px] pt-[12px] text-[16px]"
+//                    style={{
+//                        width: "114px",
+//                        height: "114px",
+//                        borderRadius: getBorderRadius(114, 114),
+//                    }}
+//                >
+//                    Hello, 114
+//                </div>
+//
+//                <div
+//                    className="relative grid place-items-center bg-card"
+//                    style={{
+//                        width: "72px",
+//                        height: "72px",
+//                        borderRadius: getBorderRadius(72, 72),
+//                    }}
+//                ></div>
+//
+//                <div
+//                    className="relative grid place-items-center bg-card"
+//                    style={{
+//                        width: "57px",
+//                        height: "57px",
+//                        borderRadius: getBorderRadius(57, 57),
+//                    }}
+//                ></div>
+//
+//                <div
+//                    className="relative grid place-items-center bg-card"
+//                    style={{
+//                        width: "29px",
+//                        height: "29px",
+//                        borderRadius: getBorderRadius(29, 29),
+//                    }}
+//                ></div>
+//            </div>

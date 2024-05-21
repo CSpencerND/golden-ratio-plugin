@@ -33,7 +33,7 @@ function TailwindIndicator() {
     if (process.env.NODE_ENV === "production") return null;
 
     return (
-        <div className="m-gr-xxs rounded-gr-xs fixed bottom-1 left-1 z-[9999] grid size-6 place-items-center bg-foreground font-mono text-sm font-bold text-background">
+        <div className="fixed bottom-1 left-1 z-[9999] m-gr-xxs grid size-6 place-items-center rounded-gr-xs bg-foreground font-mono text-sm font-bold text-background">
             <div className="block sm:hidden">xs</div>
             <div className="hidden sm:block md:hidden lg:hidden xl:hidden 2xl:hidden">
                 sm
