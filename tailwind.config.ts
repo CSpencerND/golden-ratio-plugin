@@ -101,6 +101,7 @@ const config = {
         require("tailwindcss-animate"),
         require("@tailwindcss/typography"),
         require("@tailwindcss/container-queries"),
+        require("tailwind-scrollbar-hide"),
         require("./golden-ratio"),
     ],
 } satisfies Config;

@@ -14,22 +14,16 @@ else
   set shortmess=aoO
 endif
 badd +31 ~/Code/Projects/next-golden-ratio/src/app/page.tsx
-badd +31 tailwind.config.ts
+badd +30 tailwind.config.ts
 badd +22 src/app/layout.tsx
-badd +37 ~/Code/Projects/next-golden-ratio/golden-ratio/index.ts
+badd +87 ~/Code/Projects/next-golden-ratio/golden-ratio/index.ts
+badd +1 ./
 argglobal
 %argdel
 $argadd ./
-edit ~/Code/Projects/next-golden-ratio/golden-ratio/index.ts
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
+edit ~/Code/Projects/next-golden-ratio/src/app/page.tsx
 argglobal
-balt src/app/layout.tsx
+balt ./
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -40,11 +34,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 37 - ((20 * winheight(0) + 20) / 40)
+let s:l = 31 - ((30 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 37
+keepjumps 31
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
@@ -53,8 +47,6 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)

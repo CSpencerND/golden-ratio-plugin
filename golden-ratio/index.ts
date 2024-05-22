@@ -28,7 +28,8 @@ const cssProperties = {
     "--gr-5xl": "4.236067977500615em",
 };
 
-export { twClassNames, cssProperties };
+// export { twClassNames, cssProperties };
+
 export default plugin(
     ({ addBase, addComponents, addUtilities, addVariant }) => {
         addBase({
@@ -38,7 +39,7 @@ export default plugin(
         addComponents({
             // TODO: Do some golden ratio magic for this
             ".main-grid": {
-                "--gutter": "21px",
+                "--gutter": "var(--gr-xl, 31px)",
                 "--max-width": "768px",
 
                 position: "relative",
