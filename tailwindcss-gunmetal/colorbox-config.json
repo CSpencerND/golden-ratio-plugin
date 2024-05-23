@@ -1,7 +1,7 @@
 [
     {
         "properties": {
-            "steps": 9,
+            "steps": 11,
             "hue": {
                 "start": 207,
                 "end": 227,
@@ -10,7 +10,7 @@
             "saturation": {
                 "start": 0.05,
                 "end": 0.37,
-                "rate": 1.1,
+                "rate": 1,
                 "curve": "linear"
             },
             "brightness": {

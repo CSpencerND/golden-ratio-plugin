@@ -18,9 +18,8 @@ export default function RootLayout({
                 className={cn(
                     GeistSans.variable,
                     GeistMono.variable,
-                    "min-h-screen font-sans text-foreground antialiased",
+                    "min-h-screen bg-background font-sans text-foreground antialiased",
                     "text-gr-base font-medium",
-                    "bg-gunmetal-950",
                 )}
             >
                 {children}
