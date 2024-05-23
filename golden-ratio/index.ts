@@ -39,8 +39,8 @@ export default plugin(
         addComponents({
             // TODO: Do some golden ratio magic for this
             ".main-grid": {
-                "--gutter": "var(--gr-xl, 31px)",
-                "--max-width": "768px",
+                "--gutter": "1.618em",
+                "--max-width": "max(68ch, 61.804%)",
 
                 position: "relative",
                 display: "grid",
@@ -61,7 +61,7 @@ export default plugin(
             },
 
             ".carousel": {
-                "--carousel-gap": "var(--gr-md, 19px)",
+                "--carousel-gap": "var(--gr-md)",
 
                 scrollSnapType: "x mandatory",
                 scrollBehavior: "smooth",
